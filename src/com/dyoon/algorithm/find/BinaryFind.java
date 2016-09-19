@@ -6,17 +6,13 @@ import edu.princeton.cs.algs4.StdDraw;
 
 public class BinaryFind {
 	public static void main(String[] args) {
-/*		System.out.println(Math.sqrt(4));//求平方根
+		System.out.println(Math.sqrt(4));//求平方根
 		int a[]={3,2,4};
 		a=sort(a);
-		System.out.println(Arrays.toString(a));*/
-		StdDraw.setXscale(0,100);StdDraw.setYscale(0,100);
+		System.out.println(Arrays.toString(a));
+		System.out.println(rank(2,a));
 		
-		StdDraw.setPenRadius(0.01);//设置画笔的粗细
-		StdDraw.setPenColor(StdDraw.GREEN);
-		StdDraw.point(30, 30);
-		StdDraw.line(20, 20, 40, 40);
-		StdDraw.circle(10, 50, 10);
+		
 	
 	}
 	
@@ -25,4 +21,24 @@ public class BinaryFind {
 		Arrays.sort(a);
 		return a;
 	}
+	//二分查找，前提数组必须是已经排好序的
+	public static int rank(int key,int a[]){
+		int lo=0;int hi=a.length+1;
+		while((hi-lo)>0){
+			
+			int mid=(hi-lo)/2;
+			if(key>a[mid]){
+				lo=mid+1;
+			}else if(key<a[mid]){
+				hi=mid-1;
+			}else{
+				return mid;
+			}
+		
+		}
+		return -1;
+}	
+	
+	
+	
 }
