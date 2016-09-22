@@ -1,8 +1,6 @@
 package com.dyoon.homework.test;
 
-import javax.xml.bind.annotation.XmlAccessorType;
 
-import javafx.scene.layout.Background;
 
 /**
  * @author cr
