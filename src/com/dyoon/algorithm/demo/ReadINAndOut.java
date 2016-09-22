@@ -8,6 +8,7 @@ import edu.princeton.cs.algs4.StdIn;
 /**
  * @author cr
  * 一些输入，输出的demo
+ * 是吧
  */
 public class ReadINAndOut {
 	public static void main(String[] args) {
