@@ -1,22 +1,23 @@
 package com.dyoon.homework.test;
 
-
+import java.util.Arrays;
 
 /**
  * @author cr
  * 第一章，1.1.30练习题
+ * 给一个boolean型的二维数组赋值，当i与j互质的时候，a[i][j]为true
  */
 public class Chapter1130 {
 	//判断这两个数是不是互质
-	public boolean isRelativeLyPrime(int x,int y){
+	public static  boolean isRelativeLyPrime(int x,int y){
 		if(greateCommonDivisor(x, y)==1){//如果两个数的最大公约数为1，则他们是互质的
 			return true;
 		}else{
-			return true;
+			return false;
 		}
 		
 	}
-//	求两个数的最大公约数
+//	求两个数的最大公约数，被除数和除数的最大公约数等于除数和商的最大公约数
 	public static int greateCommonDivisor(int x,int y){
 		if(x<y){
 			int temp=0;;
@@ -29,6 +30,28 @@ public class Chapter1130 {
 		return y;
 	}
 	public static void main(String[] args) {
-		System.out.println(greateCommonDivisor(3,11));
+		int x=10;int y=10;
+		boolean[][] array=new boolean[x][y];
+		for(int i=0;i<y;i++){
+			array[0][i]=false;//第一行全为false
+		}
+		for(int j=0;j<x;j++){
+			array[j][0]=false;//第一列为false
+		}
+		for(int i=1;i<x;i++){
+			for(int j=1;j<y;j++){
+				if(isRelativeLyPrime(i, i)){
+					array[i][j]=true;
+				}else{
+					array[i][j]=false;
+				}
+			}
+		}
+		for(int i=0;i<array.length;i++){
+			for(int j=0;j<array.length;j++){
+				System.out.println("a["+i+"]["+j+"]为:"+array[i][j]);
+			}
+		}
+	
 	}
 }
