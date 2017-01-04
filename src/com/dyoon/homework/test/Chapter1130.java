@@ -4,27 +4,27 @@ import java.util.Arrays;
 
 /**
  * @author cr
- * µÚÒ»ÕÂ£¬1.1.30Á·Ï°Ìâ
- * ¸øÒ»¸öbooleanĞÍµÄ¶şÎ¬Êı×é¸³Öµ£¬µ±iÓëj»¥ÖÊµÄÊ±ºò£¬a[i][j]Îªtrue
+ * ç¬¬ä¸€ç« ï¼Œ1.1.30ç»ƒä¹ é¢˜
+ * ç»™ä¸€ä¸ªbooleanå‹çš„äºŒç»´æ•°ç»„èµ‹å€¼ï¼Œå½“iä¸jäº’è´¨çš„æ—¶å€™ï¼Œa[i][j]ä¸ºtrue
  */
 public class Chapter1130 {
-	//ÅĞ¶ÏÕâÁ½¸öÊıÊÇ²»ÊÇ»¥ÖÊ
+	//ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½Ç»ï¿½ï¿½ï¿½
 	public static  boolean isRelativeLyPrime(int x,int y){
-		if(greateCommonDivisor(x, y)==1){//Èç¹ûÁ½¸öÊıµÄ×î´ó¹«Ô¼ÊıÎª1£¬ÔòËûÃÇÊÇ»¥ÖÊµÄ
+		if(greateCommonDivisor(x, y)==1){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Îª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç»ï¿½ï¿½Êµï¿½
 			return true;
 		}else{
 			return false;
 		}
 		
 	}
-//	ÇóÁ½¸öÊıµÄ×î´ó¹«Ô¼Êı£¬±»³ıÊıºÍ³ıÊıµÄ×î´ó¹«Ô¼ÊıµÈÓÚ³ıÊıºÍÉÌµÄ×î´ó¹«Ô¼Êı
+//	æ±‚ä¸¤ä¸ªæ•°çš„æœ€å¤§å…¬çº¦æ•°ï¼Œè¢«é™¤æ•°å’Œé™¤æ•°çš„æœ€å¤§å…¬çº¦æ•°ç­‰äºé™¤æ•°å’Œå•†çš„æœ€å¤§å…¬çº¦æ•°
 	public static int greateCommonDivisor(int x,int y){
 		if(x<y){
 			int temp=0;;
 			temp=x;x=y;y=temp;
 		}
 		while((x%y)!=0){
-			int c=x%y;//Èç¹ûÓàÊıÄÜ±»³ıÊıËù³ı£¬ÄÇÃ´ËûÒ»¶¨¿ÉÒÔ±»±»³ıÊıËù³ı
+			int c=x%y;//å¦‚æœä½™æ•°èƒ½è¢«é™¤æ•°æ‰€é™¤ï¼Œé‚£ä¹ˆä»–ä¸€å®šå¯ä»¥è¢«è¢«é™¤æ•°æ‰€é™¤
 			x=y;y=c;
 		}
 		return y;
@@ -33,10 +33,10 @@ public class Chapter1130 {
 		int x=10;int y=10;
 		boolean[][] array=new boolean[x][y];
 		for(int i=0;i<y;i++){
-			array[0][i]=false;//µÚÒ»ĞĞÈ«Îªfalse
+			array[0][i]=false;//ï¿½ï¿½Ò»ï¿½ï¿½È«Îªfalse
 		}
 		for(int j=0;j<x;j++){
-			array[j][0]=false;//µÚÒ»ÁĞÎªfalse
+			array[j][0]=false;//ï¿½ï¿½Ò»ï¿½ï¿½Îªfalse
 		}
 		for(int i=1;i<x;i++){
 			for(int j=1;j<y;j++){

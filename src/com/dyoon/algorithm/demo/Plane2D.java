@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.Point2D;
 
 /**
  * @author cr
- * Õâ¸öÀàÊµÏÖÁËÒ»Ğ©£¬µã(point2d)£¬Ïß(interval1d)£¬Ãæ(interval2d)µÄÊµÀı
+ * è¿™ä¸ªç±»å®ç°äº†ä¸€äº›ï¼Œç‚¹(point2d)ï¼Œçº¿(interval1d)ï¼Œé¢(interval2d)çš„å®ä¾‹
  */
 public class Plane2D {
 		
@@ -16,7 +16,7 @@ public class Plane2D {
 		Interval1D yInterval1d=new Interval1D(0.3, 0.5);
 		Interval2D interval2d=new Interval2D(xInterval1d, yInterval1d);
 		interval2d.draw();
-		System.out.println("Ãæ»ıÊÇ"+interval2d.area());
+		System.out.println("é¢ç§¯æ˜¯"+interval2d.area());
 		Counter counter=new Counter("counter");
 		for(int i=0;i<100;i++){
 			Double xDouble=Math.random();Double yDouble=Math.random();
@@ -27,7 +27,7 @@ public class Plane2D {
 				p.draw();
 			}
 		}
-		System.out.println(counter.tally());//Êä³ö×Ü¹²ÓĞ¶àÉÙ¸öµãÔÚ»­³öµÄÃæ»ıÀïÃæ
+		System.out.println(counter.tally());//è¾“å‡ºæ€»å…±æœ‰å¤šå°‘ä¸ªç‚¹åœ¨ç”»å‡ºçš„é¢ç§¯é‡Œé¢
 	}
 	
 }

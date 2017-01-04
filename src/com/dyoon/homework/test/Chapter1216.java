@@ -2,15 +2,16 @@ package com.dyoon.homework.test;
 
 /**
  * @author Administrator
- * ÊµÏÖÒ»¸öÓĞÀíÊıµÄ³éÏóÊı¾İÀàĞÍ£¬ÊµÏÖ¼Ó¼õ³Ë³ıµÄ²Ù×÷£¬ÊµÏÖ±È½ÏµÄ²Ù×÷
+*  ä¸º1.2.16çš„ç»ƒä¹ é¢˜
+ * å®ç°ä¸€ä¸ªæœ‰ç†æ•°çš„æŠ½è±¡æ•°æ®ç±»å‹ï¼Œå®ç°åŠ å‡ä¹˜é™¤çš„æ“ä½œï¼Œå®ç°æ¯”è¾ƒçš„æ“ä½œ
  */
 public class Chapter1216 {
-	private long numerat;//·Ö×Ó
-	private long deno;//·ÖÄ¸
+	private long numerat;//ï¿½ï¿½ï¿½ï¿½
+	private long deno;//ï¿½ï¿½Ä¸
 	
 	public Chapter1216(long numerator,long denominator){
 		if(denominator==0){
-			throw new RuntimeException("·ÖÄ¸²»ÄÜÎª0");
+			throw new RuntimeException("ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Îª0");
 		}
 		this.numerat=numerator;
 		this.deno=denominator;
@@ -31,9 +32,10 @@ public class Chapter1216 {
 	public void setDeno(long deno) {
 		this.deno = deno;
 	}
+	//ï¿½ï¿½ï¿½ï¿½Ä¼Ó·ï¿½
 	public Chapter1216 add(Chapter1216 x){
 		if(x.getNumerat()==0){
-			return this;//Èç¹ûxµÄ·Ö×ÓÎª0£»·µ»Øy
+			return this;//ï¿½ï¿½ï¿½xï¿½Ä·ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½y
 		}
 		if(this.numerat==0){
 			return x;
@@ -41,16 +43,58 @@ public class Chapter1216 {
 		
 		long deno=lowerstCommonMultip(this.deno, x.getDeno());
 		long num=this.numerat*(deno/this.deno)+x.getNumerat()*(deno/x.getDeno());
+		if(!isRelativelyPrime(deno, num)){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½)
+			long temporary=greatCommonDivisor(deno, num);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½deno/numeraï¿½Í²ï¿½ï¿½È¶ï¿½
+			deno=deno/temporary;
+			num=num/temporary;
+		}
 		return new Chapter1216(num,deno);
 	}
-	//ÇóÁ½¸öÊıµÄ×îĞ¡¹«±¶Êı
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+	public Chapter1216 subtraction (Chapter1216 x){
+		long deno=lowerstCommonMultip(x.getDeno(), this.deno);
+		long numera=this.numerat*(deno/this.deno)-x.getNumerat()*(deno/x.getDeno());
+		if(!isRelativelyPrime(deno, numera)){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½)
+			long temporary=greatCommonDivisor(deno, numera);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½deno/numeraï¿½Í²ï¿½ï¿½È¶ï¿½
+			deno=deno/temporary;
+			numera=numera/temporary;
+		}
+		return new Chapter1216(numera,deno);
+	}
+	
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³Ë·ï¿½
+	public Chapter1216 multip(Chapter1216 x){
+		long numera=this.numerat*x.getNumerat();
+		long deno=this.deno*x.getDeno();
+		if(!isRelativelyPrime(deno, numera)){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½)
+			long temporary=greatCommonDivisor(deno, numera);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½deno/numeraï¿½Í²ï¿½ï¿½È¶ï¿½
+			deno=deno/temporary;
+			numera=numera/temporary;
+		}
+		return new Chapter1216(numera,deno);
+	}
+	public Chapter1216 divice(Chapter1216 x){
+		long numera=this.numerat*x.getDeno();
+		long deno=this.deno*x.getNumerat();
+		if(!isRelativelyPrime(numera, deno)){
+			long temporary=greatCommonDivisor(deno, numera);
+			deno=deno/temporary;
+			numera=numera/temporary;
+		}
+		return new Chapter1216(numera,deno);
+	}
+	
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public long lowerstCommonMultip(long x,long y){
 		long bestCommonDivisor=greatCommonDivisor(x, y);
 		return bestCommonDivisor*(x/bestCommonDivisor)*(y/bestCommonDivisor);
 
 	}
-	//ÇóÁ½¸öÊıµÄ×î´ó¹«Ô¼Êı
+	//è·å–æœ€å¤§å…¬çº¦æ•°
 	public long greatCommonDivisor(long x,long y){
+		if(x==y){
+			return y;
+		}
 		if(x<y){
 			long temp=0;
 			temp=x;x=y;y=temp;
@@ -60,6 +104,17 @@ public class Chapter1216 {
 			x=y;y=c;
 		}
 		return y;
+	}
+	//æ˜¯å¦äº’è´¨
+	public boolean isRelativelyPrime(long x,long y){
+		if(x==y){
+			return false;
+		}
+		if(greatCommonDivisor(x,y)==1){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	@Override

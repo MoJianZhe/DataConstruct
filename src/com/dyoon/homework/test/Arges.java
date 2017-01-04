@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Arges {
 	public static void main(String[] args) throws IOException {
 		int firstArg=testIn();
-		System.out.println("ÊäÈëµÄµÚÒ»¸ö²ÎÊıÊÇ£º"+firstArg);
+		System.out.println("è¾“å…¥çš„ç¬¬ä¸€ä¸ªæ•°æ˜¯ï¼š"+firstArg);
 		int secondArg=testIn();
 		int thirdArg=testIn();
 		if(firstArg==secondArg&&secondArg==thirdArg){
-			System.out.println("ÕâÈı¸ö²ÎÊıÏàµÈ");
+			System.out.println("è¾“å…¥çš„ä¸‰ä¸ªå‚æ•°ç›¸ç­‰");
 		}else {
-			System.out.println("ÕâÈı¸ö²ÎÊı²»ÏàµÈ");
+			System.out.println("è¾“å…¥çš„ä¸‰ä¸ªå‚æ•°ä¸ç›¸ç­‰");
 		}
 		
 	}
 
 	public static int testIn() throws IOException{
-		System.out.println("ÇëÊäÈëÒ»¸öÕûÊı");
+		System.out.println("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°");
 		Scanner scanner=new Scanner(System.in);
 		int a=scanner.nextInt();
 		return a;

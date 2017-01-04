@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdDraw;
 
 public class BinaryFind {
 	public static void main(String[] args) {
-		System.out.println(Math.sqrt(4));//ÇóÆ½·½¸ù
+		System.out.println(Math.sqrt(4));//ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½
 		int a[]={3,2,4};
 		a=sort(a);
 		System.out.println(Arrays.toString(a));
@@ -16,12 +16,12 @@ public class BinaryFind {
 	
 	}
 	
-	//½«Êý×é°´ÉýÐòÅÅÁÐ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½é°´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static int[] sort(int []a){
 		Arrays.sort(a);
 		return a;
 	}
-	//¶þ·Ö²éÕÒ£¬Ç°ÌáÊý×é±ØÐëÊÇÒÑ¾­ÅÅºÃÐòµÄ
+	//äºŒåˆ†æŸ¥æ‰¾ï¼Œå‰ææ•°ç»„å¿…é¡»æ˜¯å·²ç»æŽ’å¥½åºçš„
 	public static int rank(int key,int a[]){
 		int lo=0;int hi=a.length+1;
 		while((hi-lo)>0){

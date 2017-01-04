@@ -8,43 +8,43 @@ import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * @author cr
- * ÕâÊÇÒ»¸ö»­Í¼µÄdemo
+ *    è¿™æ˜¯ä¸€ä¸ªç”»å›¾çš„demo
  */
 public class DrawingTest {
 	public static void main(String[] args) {
 		int a=12;
 		while(a>3){
-			System.out.println("aµÄÖµÊÇ£º"+a);
+			System.out.println("açš„å€¼æ˜¯"+a);
 			a--;
 		}
-		System.out.println("aµÄÖµ×îÖÕµÄÖµÊÇ£º"+a);
+		System.out.println("açš„å€¼æœ€ç»ˆçš„å€¼æ˜¯"+a);
 		int[] b={1,23,3,53};
 		System.out.println(b);
 		
 		
 	}
 	
-	//»­Ò»ÌõÖ±Ïß
+	//ç”»ä¸€æ¡ç›´çº¿
 	public static void drawingLine(){
-		StdDraw.setXscale(0,100);//ÉèÖÃxµÄ·¶Î§
-		StdDraw.setYscale(0,100);//ÉèÖÃyµÄ·¶Î§
+		StdDraw.setXscale(0,100);//è®¾ç½®xçš„èŒƒå›´
+		StdDraw.setYscale(0,100);//è®¾ç½®yçš„èŒƒå›´
 		
 		StdDraw.setPenRadius(0.01);
-//		StdDraw.setPenColor(StdDraw.BLUE);//ÉèÖÃ»­±ÊµÄÑÕÉ«
+		StdDraw.setPenColor(StdDraw.BLUE);//è®¾ç½®ç”»ç¬”çš„é¢œè‰²
 		StdDraw.line(10, 10, 40, 40);
 	}
 	
-	//»­Ò»¸öº¯ÊıÖµ
+	//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	public static void drawingFunction(){
-		StdDraw.setXscale(0,100);//ÉèÖÃxµÄ·¶Î§
-		StdDraw.setYscale(0,100*100);//ÉèÖÃyµÄ·¶Î§
+		StdDraw.setXscale(0,100);//è®¾ç½®xçš„èŒƒå›´
+		StdDraw.setYscale(0,100*100);//è®¾ç½®yçš„èŒƒå›´
 		
 		for(int i=0;i<100;i++){
 			StdDraw.point(i, i*i);
 		}
 	}
 
-	//»­Ò»¸öËæ»úÊı×é£¬Ê¹ÓÃ¾ØĞÎÌî³ä
+	//ç”»ä¸€ä¸ªéšæœºæ•°ç»„ï¼Œä½¿ç”¨çŸ©å½¢å¡«å……
 	public static void drawingArray(){
 		Double[] a=new Double[50];
 //		System.out.println(a);
@@ -55,8 +55,8 @@ public class DrawingTest {
 		}
 		Arrays.sort(a);
 		for(int i=0;i<a.length;i++){
-			double x=1.0*i/50;double y=a[i]/2.0;//¾ØĞÎµÄÖĞĞÄ
-			double rw=0.5/50;double rh=a[i]/2.0;//¾ØĞÎµÄ¿íºÍ¸ß
+			double x=1.0*i/50;double y=a[i]/2.0;//çŸ©å½¢çš„ä¸­å¿ƒ
+			double rw=0.5/50;double rh=a[i]/2.0;//çŸ©å½¢çš„å®½å’Œé«˜
 			StdDraw.filledRectangle(x, y, rw, rh);
 		}
 	
