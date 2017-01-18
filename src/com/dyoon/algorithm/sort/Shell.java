@@ -1,4 +1,4 @@
-package com.dyoon.algorithm.find;
+package com.dyoon.algorithm.sort;
 
 /**
  * Created by Administrator on 2017/1/12.
