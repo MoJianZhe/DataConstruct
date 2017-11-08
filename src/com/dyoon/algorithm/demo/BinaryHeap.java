@@ -3,6 +3,7 @@ package com.dyoon.algorithm.demo;
 import java.util.Arrays;
 
 /**
+ *
  * Created by jun on 2017/2/17.
  */
 public class BinaryHeap {
@@ -92,6 +93,37 @@ public class BinaryHeap {
         }
     }
 
+    /**
+     *
+     * @param a 要下沉的数组
+     * @param k 要下沉的数的下标
+     * @param length 数组的长度
+     */
+    public void sink(Comparable[] a, int k, int length) {
+        while (k * 2 < length) {
+            int j=k*2;
+            if (less(a[j], a[j + 1])) {
+                j = j++;
+            }
+            if (less(a[k], a[j])) {
+                swap(a, k, j);
+            }
+            k=k*2;
+        }
+
+    }
+
+    public  void sort(Comparable[] a) {
+        int N=a.length;
+        for (int i = N/2;i>=1; i++) {
+            sink(a, i, N);
+        }
+        while (N > 1) {
+            swap(a,1,N--);
+            sink(a, 1, N);
+        }
+    }
+
 
     public static void main(String[] args) {
         int numItems = 20;
@@ -101,7 +133,7 @@ public class BinaryHeap {
         for (int j = 0; j < 7; j++) {
             h.insert(new Integer(((int) (Math.random() * 100))));
         }*/
-       h.insert(new Integer(85));
+        h.insert(new Integer(85));
         h.insert(new Integer(82));
         h.insert(new Integer(79));
         h.insert(new Integer(31));

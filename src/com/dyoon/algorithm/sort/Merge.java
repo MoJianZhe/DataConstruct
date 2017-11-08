@@ -74,4 +74,37 @@ public class Merge {
 
     }
 
+    /**
+     * 自己实现的merge
+     * @param a 需要merge的数组a
+     * @param b 需要merge 的数组b
+     */
+    private void merge(Comparable[] a, Comparable[] b) {
+        int N=a.length+b.length;
+        Comparable[] sum = new Comparable[N];
+/*        for (int i = 0; i < a.length; i++) {
+            sum[i] = a[i];
+        }
+        for (int i = a.length; i < N; i++) {
+            sum[i] = b[i - a.length];
+        }*/
+        int m=0;int n=0;
+        for (int i = 0; i < N; i++) {
+            if (m > a.length) {
+                sum[i] = b[n++];
+            } else if (n > b.length) {
+                sum[i] = a[m++];
+            } else if (less(a[i], b[i])) {
+                sum[i] = a[m++];
+            } else {
+                sum[i] = b[n++];
+            }
+
+        }
+    }
+
+    private boolean less(Comparable x, Comparable y) {
+        return x.compareTo(y)<0;
+    }
+
 }

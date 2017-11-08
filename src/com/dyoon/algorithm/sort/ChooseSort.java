@@ -13,7 +13,7 @@ public class ChooseSort {
 		for(int j=0;j<disorder.length;j++){
 			int max=disorder[j];
 			int temp;
-			for(int i=j;i<disorder.length;i++){
+			for(int i=j+1;i<disorder.length;i++){
 				if(disorder[i]>max){
 					max=disorder[i];
 					temp=disorder[i];
